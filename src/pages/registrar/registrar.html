@@ -1,0 +1,38 @@
+<!--
+  Generated template for the RegistrarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Criar Conta</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form #form="ngForm" novalidate>
+    <ion-item>
+      <ion-label floating> E-mail </ion-label>
+      <ion-input type="email" name="email" [(ngModel)]="user.email" #email="ngModel" required > </ion-input>
+      <ion-item *ngIf="email.errors && (email.dirty || email.touched)" class="text-danger">
+        O campo é obrigatório
+      </ion-item>
+    </ion-item>
+    <ion-item>
+      <ion-label floating> Senha </ion-label>
+      <ion-input type="password" name="senha" [(ngModel)]="user.senha" #senha="ngModel" required> </ion-input>
+      <ion-item *ngIf="senha.errors && (senha.dirty || senha.touched)" class="text-danger">
+        O campo é obrigatório
+      </ion-item>
+    </ion-item>
+    <button ion-button full [disabled]="!form.form.valid" (click)="novoRegistro()"> Registrar </button>
+    <button ion-button full (click)="cancelarRegistro()"> Cancelar </button>
+    
+  </form>
+
+</ion-content>

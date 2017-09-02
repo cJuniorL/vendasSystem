@@ -1,0 +1,41 @@
+<!--
+  Generated template for the CadastroCidadePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> {{headerTitulo}} </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form #form="ngForm" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label floating> Nome </ion-label>
+        <ion-input type="text" name="cidade" [(ngModel)]="cidade.nome" required></ion-input>
+        <ion-item *ngIf="cidade.erros && (cidade.dirty || cidade.touched)" class="text-danger">
+          O campo é obrigatório
+        </ion-item>
+      </ion-item>
+      <ion-item>
+        <ion-label floating> Estado </ion-label>
+        <ion-select name="estado" [(ngModel)]="cidade.estado">
+          <ion-option value="São Paulo">São Paulo</ion-option>
+          <ion-option value="Paraná">Paraná</ion-option>
+          <ion-option value="Rio de Janeiro">Rio de Janeiro</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label floating> CEP </ion-label>
+        <ion-input type="text" name="cep" [(ngModel)]="cidade.cep" required></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button color="secondary" [disabled]="!form.form.valid"  (click)="cadastroUpdateCidade()">{{botaoConfirm}}</button>
+  </form>  
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cadastro de Cliente</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form #form="ngForm" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label floating> Nome </ion-label>
+        <ion-input name="nome" type="text" [(ngModel)]="cliente.nome" required></ion-input>
+        <ion-item *ngIf="cliente.erros && (cliente.dirty || cliente.touched)" class="text-danger">
+          O campo é obrigatório
+        </ion-item>
+      </ion-item>
+      <ion-item>
+        <ion-label floating> Cidade </ion-label>
+        <ion-select name="cidade" [(ngModel)]="cliente.keyCidade" >
+          <ion-option *ngFor="let c of cidades | async" value={{c.$key}}>
+            {{c.nome}}
+          </ion-option>
+        </ion-select>
+      </ion-item>
+      <button ion-button color="secondary" [disabled]="!form.form.valid"  (click)="cadastroUpdateCliente()">Gravar</button>
+    </ion-list>
+  </form>  
+</ion-content>
