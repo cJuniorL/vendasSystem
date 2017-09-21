@@ -3,28 +3,28 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Clientes</ion-title>
+    <ion-title>Produtos</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
   <ion-fab bottom right>
-    <button ion-fab mini (click)="adicionarCliente()"><ion-icon name="add"></ion-icon></button>  
+    <button ion-fab mini (click)="criarProduto()"><ion-icon name="add"></ion-icon></button>  
   </ion-fab>
   <ion-list>
-    <ion-item-sliding *ngFor="let c of clientes | async">
+    <ion-item-sliding *ngFor="let p of produtos | async">
       <ion-item>
-        <h1> {{c.nome}} </h1>
+        <h1> {{p.nome}} </h1>
       </ion-item>
       <ion-item-options side="right">
-        <button ion-button color="primary" (click)="updateCliente(c)">
+        <button ion-button color="primary">
           <ion-icon name="create"></ion-icon>
-            Editar
+          Editar
         </button>
-        <button ion-button color="danger" (click)="removerCliente(c)">
+        <button ion-button color="danger">
           <ion-icon name="trash" ></ion-icon>
-            Remover
+          Remover
         </button>
       </ion-item-options>
     </ion-item-sliding>

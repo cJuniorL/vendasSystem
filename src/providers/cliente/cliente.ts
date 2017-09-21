@@ -4,12 +4,6 @@ import { Cliente } from '../../model/cliente'
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import 'rxjs/add/operator/map';
 
-/*
-  Generated class for the ClienteProvider provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular DI.
-*/
 @Injectable()
 export class ClienteProvider {
 
@@ -26,7 +20,24 @@ export class ClienteProvider {
   create(cliente){
     return this.cliente$.push({
       nome: cliente.nome,
-      keyCidade: cliente.keyCidade
+      telefone1: cliente.telefone1,
+      telefone2: cliente.telefone2,
+      keyCidade: cliente.keyCidade,
+      bairro: cliente.bairro,
+      rua: cliente.rua,
+      num: cliente.num
+    });
+  }
+
+  update(key, cliente){
+    return this.cliente$.update(key, {
+      nome: cliente.nome,
+      telefone1: cliente.telefone1,
+      telefone2: cliente.telefone2,
+      keyCidade: cliente.keyCidade,
+      bairro: cliente.bairro,
+      rua: cliente.rua,
+      num: cliente.num
     });
   }
 

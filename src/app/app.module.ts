@@ -13,6 +13,8 @@ import { CadastroCidadePage } from '../pages/cadastro-cidade/cadastro-cidade';
 import { ViewCidadePage} from '../pages/view-cidade/view-cidade';
 import { InserirClientePage } from '../pages/inserir-cliente/inserir-cliente';
 import { ListarClientePage } from '../pages/listar-cliente/listar-cliente';
+import { ListarProdutoPage } from '../pages/listar-produto/listar-produto';
+import { CadastroProdutoPage } from '../pages/cadastro-produto/cadastro-produto';
 
 import { HttpModule } from '@angular/http';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -22,6 +24,7 @@ import { AuthProvider } from '../providers/auth/auth';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { CidadeProvider } from '../providers/cidade/cidade';
 import { ClienteProvider } from '../providers/cliente/cliente';
+import { ProdutoProvider } from '../providers/produto/produto';
 
 const firebaseConfig = {
      apiKey: "AIzaSyAyqa0oSYtq8DTC2YHlTh6TtiTnr5g8d2M",
@@ -42,7 +45,9 @@ const firebaseConfig = {
     CadastroCidadePage,
     ViewCidadePage,
     InserirClientePage,
-    ListarClientePage
+    ListarClientePage,
+    ListarProdutoPage,
+    CadastroProdutoPage
   ],
   imports: [
     BrowserModule,
@@ -61,7 +66,9 @@ const firebaseConfig = {
     CadastroCidadePage,
     ViewCidadePage,
     InserirClientePage,
-    ListarClientePage
+    ListarClientePage,
+    ListarProdutoPage,
+    CadastroCidadePage
   ],
   providers: [
     StatusBar,
@@ -71,7 +78,8 @@ const firebaseConfig = {
     AngularFireAuth,
     AuthProvider,
     CidadeProvider,
-    ClienteProvider
+    ClienteProvider,
+    ProdutoProvider
   ]
 })
 export class AppModule {}

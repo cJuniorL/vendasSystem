@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Cadastro de Cliente</ion-title>
+    <ion-title>{{headerTitle}}</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -18,14 +18,34 @@
         </ion-item>
       </ion-item>
       <ion-item>
+        <ion-label floating> Telefone(1) </ion-label>
+        <ion-input name="telefone1" type="tel" [(ngModel)]="cliente.telefone1"> </ion-input>
+      </ion-item>
+       <ion-item>
+        <ion-label floating> Telefone(2) </ion-label>
+        <ion-input name="telefone2" type="tel" [(ngModel)]="cliente.telefone2"> </ion-input>
+      </ion-item>
+      <ion-item>
         <ion-label floating> Cidade </ion-label>
-        <ion-select name="cidade" [(ngModel)]="cliente.keyCidade" >
+        <ion-select name="cidade" [(ngModel)]="cliente.keyCidade" required>
           <ion-option *ngFor="let c of cidades | async" value={{c.$key}}>
             {{c.nome}}
           </ion-option>
         </ion-select>
       </ion-item>
-      <button ion-button color="secondary" [disabled]="!form.form.valid"  (click)="cadastroUpdateCliente()">Gravar</button>
+      <ion-item>
+        <ion-label floating> Bairro </ion-label>
+        <ion-input name="bairro" type="text" [(ngModel)]="cliente.bairro"> </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating> Rua </ion-label>
+        <ion-input name="rua" type="text" [(ngModel)]="cliente.rua"> </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating> Num </ion-label>
+        <ion-input name="num" type="text" [(ngModel)]="cliente.num"> </ion-input>
+      </ion-item>
+      <button ion-button color="secondary" [disabled]="!form.form.valid"  (click)="cadastroUpdateCliente()">{{btnConfirm}}</button>
     </ion-list>
   </form>  
 </ion-content>

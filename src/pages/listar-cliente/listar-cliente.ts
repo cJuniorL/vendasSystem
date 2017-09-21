@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { ClienteProvider } from '../../providers/cliente/cliente';
-
+import { InserirClientePage } from '../inserir-cliente/inserir-cliente';
 
 @IonicPage()
 @Component({
@@ -22,11 +22,13 @@ export class ListarClientePage {
   }
 
   adicionarCliente(){
-
+    this.navCtrl.push(InserirClientePage);
   }
 
   updateCliente(cliente){
-
+      this.navCtrl.push(InserirClientePage, {
+        cliente: cliente
+      });
   }
 
   removerCliente(cliente){

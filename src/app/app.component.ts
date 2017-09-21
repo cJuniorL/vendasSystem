@@ -9,6 +9,8 @@ import { HomePage } from '../pages/home/home';
 import { ListarCidadePage } from '../pages/listar-cidade/listar-cidade';
 import { InserirClientePage } from '../pages/inserir-cliente/inserir-cliente';
 import { ListarClientePage } from '../pages/listar-cliente/listar-cliente';
+import { ListarProdutoPage } from '../pages/listar-produto/listar-produto';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -26,7 +28,8 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Cidades', component: ListarCidadePage },
-      { title: 'Clientes', component: ListarClientePage}
+      { title: 'Clientes', component: ListarClientePage},
+      { title: 'Produtos', component: ListarProdutoPage}
     ];
   }
 
