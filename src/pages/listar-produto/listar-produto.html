@@ -18,7 +18,7 @@
         <h1> {{p.nome}} </h1>
       </ion-item>
       <ion-item-options side="right">
-        <button ion-button color="primary">
+        <button ion-button color="primary" (click)="updateProduto(p)">
           <ion-icon name="create"></ion-icon>
           Editar
         </button>

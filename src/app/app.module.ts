@@ -68,7 +68,8 @@ const firebaseConfig = {
     InserirClientePage,
     ListarClientePage,
     ListarProdutoPage,
-    CadastroCidadePage
+    CadastroCidadePage,
+    CadastroProdutoPage
   ],
   providers: [
     StatusBar,

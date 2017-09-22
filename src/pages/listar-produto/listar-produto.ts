@@ -30,4 +30,9 @@ export class ListarProdutoPage {
   criarProduto(){
     this.navCtrl.push(CadastroProdutoPage);
   }
+
+  updateProduto(produto){
+    this.navCtrl.push(CadastroProdutoPage, { 
+      produto : produto });
+  }
 }

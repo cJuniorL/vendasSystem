@@ -9,7 +9,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title> Cadastro de Produto </ion-title>
+    <ion-title> {{header}} </ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -19,15 +19,12 @@
       <ion-item>
         <ion-label floating> Nome </ion-label>
         <ion-input type="text" name="nome" [(ngModel)]="produto.nome" required></ion-input>
-        <ion-item *ngIf="nome.erros && (cidade.dirty || nome.touched)" class="text-danger">
-          O campo é obrigatório
-        </ion-item>
       </ion-item>
       <ion-item>
-        <ion-label floating> CEP </ion-label>
-        <ion-input type="text" name="cep" [(ngModel)]="cidade.cep" required></ion-input>
+        <ion-label floating> Valor de Venda </ion-label>
+        <ion-input type="number" name="valorVenda" [(ngModel)]="produto.valorVenda" required></ion-input>
       </ion-item>
     </ion-list>
-    <button ion-button color="secondary" [disabled]="!form.form.valid"  (click)="cadastroUpdateCidade()">{{botaoConfirm}}</button>
+    <button ion-button color="secondary" [disabled]="!form.form.valid"  (click)="cadastroUpdateProduto()">{{botaoConfirm}}</button>
   </form>  
 </ion-content>

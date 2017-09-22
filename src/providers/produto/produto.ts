@@ -32,7 +32,7 @@ export class ProdutoProvider {
   update(key, produto){
     return this.produto$.update(key, {
       nome: produto.nome,
-      valorVenda: produto.valorVEnda,
+      valorVenda: produto.valorVenda,
       urlImagem: produto.urlImagem
     });
   }
